@@ -1,0 +1,23 @@
+{
+  "name": "unit-book",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "build": "tsc",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/app.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "jest": "^25.5.4",
+    "nodemon": "^2.0.3",
+    "ts-jest": "^25.5.0",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.8.3"
+  }
+}
