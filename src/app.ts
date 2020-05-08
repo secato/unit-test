@@ -3,7 +3,7 @@ import Library from './Library';
 
 const library = new Library();
 const dune = new Book('Dune', 'Author1');
-const thePowerOfNow = new Book('The power of now', 'Eckhart tolle');
+const thePowerOfNow = new Book('The power of now', 'Eckhart Tolle');
 
 library.addBook(dune);
 library.addBook(thePowerOfNow);
