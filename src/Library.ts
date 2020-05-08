@@ -11,8 +11,31 @@ export default class Library {
     this.collection.push(book);
   }
 
-  getBook(title: String) {
-    return this.collection.find((book) => book.getTitle() === title) || null;
+  removeBook(title: string) {
+    const index = this.collection.findIndex(
+      (book) => book.getTitle() === title
+    );
+
+    if (index === -1) {
+      return null;
+    }
+
+    return this.collection.splice(index, 1)[0];
+  }
+
+  getBook(title: string, author: string = '') {
+    let book = this.collection.find((book) => {
+      if (author) {
+        return book.getTitle() === title && book.getAuthor() === author;
+      }
+
+      return book.getTitle() === title;
+    });
+    return book || null;
+  }
+
+  getBooks(author: string) {
+    return this.collection.filter((book) => book.getAuthor() === author);
   }
 
   getNumBooks() {
