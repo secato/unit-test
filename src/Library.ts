@@ -24,14 +24,15 @@ export default class Library {
   }
 
   getBook(title: string, author: string = '') {
-    let book = this.collection.find((book) => {
-      if (author) {
-        return book.getTitle() === title && book.getAuthor() === author;
-      }
+    return (
+      this.collection.find((book) => {
+        if (author) {
+          return book.getTitle() === title && book.getAuthor() === author;
+        }
 
-      return book.getTitle() === title;
-    });
-    return book || null;
+        return book.getTitle() === title;
+      }) || null
+    );
   }
 
   getBooks(author: string) {
